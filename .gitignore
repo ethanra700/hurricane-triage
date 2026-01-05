@@ -1,0 +1,48 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.env
+.venv/
+env/
+venv/
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+
+# Unit test / coverage reports
+.pytest_cache/
+.tox/
+.coverage*
+htmlcov/
+
+# IDEs and editors
+.DS_Store
+.vscode/
+.idea/
+
+# Node / frontend
+node_modules/
+.next/
+.turbo/
+
+# Logs and caches
+*.log
+*.cache
+pip-log.txt
+
+# Environment files
+.env.*
+.python-version
+
+# Alembic
+alembic.ini.bak
+
+# Misc
+*.swp
+*.swo
+Thumbs.db
