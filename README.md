@@ -1,6 +1,37 @@
 # Hurricane Impact Triage System
+Hurricane Impact Triage System
+Overview
 
-The Hurricane Impact Triage System is a reproducible data pipeline and relational database that transforms historical Hurricane Ian updates (Sep 26�30, 2022) for Broward and Miami-Dade counties into structured, queryable operational information for first responders.
+The Hurricane Impact Triage System is a data engineering and analysis project that transforms public, official hurricane updates into structured, queryable operational information.
+
+The system ingests raw hurricane-related updates from multiple government sources, preserves the original data as ground truth, extracts deterministic and explainable “Action” and “Information” cards, groups duplicate reports, and stores everything in a relational database optimized for SQL-based analysis.
+
+
+This project uses a historical data, Hurricane Ian, to showcase as a demo
+
+Demo Scope (Fixed & Reproducible)
+
+Event: Hurricane Ian
+Time Window: September 26–30, 2022
+Geography: Broward County & Miami-Dade County (Florida)
+
+Data Sources (Official Only)
+
+National Weather Service (NWS) — alerts, advisories, flood warnings
+
+Broward County Emergency Management — shelters, evacuations, local guidance
+
+Miami-Dade County Emergency Management — shelters, transportation, utilities updates
+
+Florida Division of Emergency Management (FL DEM) — statewide situational context
+
+All sources are:
+
+official
+
+timestamped
+
+operationally relevant
 
 ## How to run demo (full stack)
 1) Start Postgres
