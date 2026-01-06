@@ -67,16 +67,7 @@ set NEXT_PUBLIC_API_BASE=http://localhost:8000   # or export on bash
 npm run dev -- --port 3000
 ```
 
-7) Open
-- API docs: http://localhost:8000/docs
-- Frontend: http://localhost:3000
 
-If a port is in use, pick another and adjust `NEXT_PUBLIC_API_BASE` accordingly.
 
-## API endpoints
-- `/health`
-- `/cards` (filters: mode, county, category, urgency, from/to, limit/offset; action mode sorted by urgency/published_at)
-- `/stats` (counts by category/county/urgency; optional from/to)
-- `/summary` (top urgent actions, leading categories, totals; optional from/to)
 
 
