@@ -6,7 +6,13 @@ The Hurricane Impact Triage System is a reproducible data pipeline and relationa
 - Start Postgres: `docker compose up -d postgres`
 - Install backend deps: `pip install -r backend/requirements.txt`
 - Run migrations: `alembic -c backend/alembic.ini upgrade head`
-- Run NWS ingestion: `python -m pipeline.ingest.nws` (uses DATABASE_URL or defaults to local compose DB)
+- Run NWS ingestion: `python -m pipeline.ingest.nws`
+- Run Broward ingestion: `python -m pipeline.ingest.broward`
+- Run Miami-Dade ingestion: `python -m pipeline.ingest.miamidade`
+- Run FL DEM ingestion: `python -m pipeline.ingest.fldem`
+- Run cleaning: `python -m pipeline.clean.clean_text`
+- Run extraction: `python -m pipeline.extract.extract_cards`
+- Run all ingestion + cleaning + extraction: `python -m pipeline.run_all`
 - (Dependencies/env setup to be added in later slices.)
 
 ## Slice checklist
