@@ -12,16 +12,29 @@ The Hurricane Impact Triage System is a reproducible data pipeline and relationa
 - Run FL DEM ingestion: `python -m pipeline.ingest.fldem`
 - Run cleaning: `python -m pipeline.clean.clean_text`
 - Run extraction: `python -m pipeline.extract.extract_cards`
-- Run all ingestion + cleaning + extraction: `python -m pipeline.run_all`
-- (Dependencies/env setup to be added in later slices.)
+- Run deduplication: `python -m pipeline.dedup.dedup`
+- Run all ingestion + cleaning + extraction + dedup: `python -m pipeline.run_all`
+- Start API: `uvicorn backend.app.main:app --reload --port 8000`
+
+Frontend (Next.js):
+- `cd frontend`
+- `npm install`
+- (optional) set `NEXT_PUBLIC_API_BASE` (default http://localhost:8000)
+- `npm run dev` (open http://localhost:3000)
+
+API endpoints:
+- `/health`
+- `/cards` (filters: mode, county, category, urgency, from/to, limit/offset)
+- `/stats` (counts by category/county/urgency; optional from/to)
+- `/summary` (top urgent actions, leading categories, totals; optional from/to)
 
 ## Slice checklist
 - [x] Slice 0: Scaffold + plumbing
-- [ ] Slice 1: Database schema + Alembic migration
-- [ ] Slice 2: Ingestion stubs + raw storage
-- [ ] Slice 3: Cleaning + deterministic extraction framework
-- [ ] Slice 4: Deduplication grouping
-- [ ] Slice 5: API endpoints (/cards, /stats, /summary)
+- [x] Slice 1: Database schema + Alembic migration
+- [x] Slice 2: Ingestion stubs + raw storage
+- [x] Slice 3: Cleaning + deterministic extraction framework
+- [x] Slice 4: Deduplication grouping
+- [x] Slice 5: API endpoints (/cards, /stats, /summary)
+- [x] Slice 7: Thin frontend tabs (Action vs Information)
 - [ ] Slice 6: Pipeline run orchestration
-- [ ] Slice 7: Thin frontend tabs (Action vs Information)
 - [ ] Slice G: Final polish and documentation

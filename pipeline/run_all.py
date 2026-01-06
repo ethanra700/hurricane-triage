@@ -1,6 +1,7 @@
 from pipeline.ingest import nws, broward, miamidade, fldem
 from pipeline.clean import clean_text
 from pipeline.extract import extract_cards
+from pipeline.dedup import dedup
 
 
 def main() -> None:
@@ -15,6 +16,9 @@ def main() -> None:
 
     # Extraction step
     extract_cards.extract()
+
+    # Deduplication step
+    dedup.deduplicate()
 
 
 if __name__ == "__main__":
